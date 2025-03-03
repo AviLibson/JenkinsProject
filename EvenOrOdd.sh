@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Prompt the user to enter a number
+# a prompt that asks the user to input a number
 read -p "Enter a number: " user_input
 
-# Check if the input is a valid number
+# check if the number is valid
 if [[ $user_input =~ ^[0-9]+$ ]]; then
-    # Check if the number is even or odd
+    # check if the number is even or odd
     if (( user_input % 2 == 0 )); then
         echo "Even"
     else
