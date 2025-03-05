@@ -19,7 +19,7 @@ pipeline {
         stage('Run Shell Script') {
             steps {
                 script {
-                    def output = sh(script: "bash EvenOrOdd.sh ${params.user_input}", returnStdout: true).trim()
+                    def output = bat(script: "bash EvenOrOdd.bat ${params.user_input}", returnStdout: true).trim()
                     writeFile file: OUTPUT_FILE, text: "<html><body><h1>Output</h1><p>${output}</p></body></html>"
                 }
             }
