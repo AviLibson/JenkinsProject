@@ -1,14 +1,22 @@
 // a prompt that asks the user to input a number
-read -p "Enter a number: " user_input
+println "Please enter a number:"
 
-// check if the number is valid
-if [[ $user_input =~ ^[0-9]+$ ]]; then
-    // check if the number is even or odd
-    if (( user_input % 2 == 0 )); then
-        echo "Even"
-    else
-        echo "Odd"
-    fi
-else
-    echo "Invalid input. Please enter a valid number."
-fi
+// Reading user input
+def userInput = System.console().readLine()
+
+// Display the entered number
+println "You entered: $userInput"
+
+// Example of checking if the number is even or odd
+try {
+    def number = Integer.parseInt(userInput)
+
+    // Check if the number is even or odd
+    if (number % 2 == 0) {
+        println "$number is even."
+    } else {
+        println "$number is odd."
+    }
+} catch (NumberFormatException e) {
+    println "Invalid input. Please enter a valid integer."
+}
