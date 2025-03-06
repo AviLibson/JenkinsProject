@@ -1,21 +1,16 @@
 #!/bin/bash
 
-# Check if an argument is provided
-if [[ -z "$1" ]]; then
-    echo "No input provided. Please enter a number."
-    exit 1
-fi
-
-# Assign input argument to a variable
+# store the first input ( number ) , similar to java scanner
 num="$1"
 
-# Check if the input is a valid integer (including negative numbers)
+# Check if the input given is a valid number ( numbers only )
 if ! [[ "$num" =~ ^-?[0-9]+$ ]]; then
     echo "Invalid input. Please enter a valid number."
     exit 1
 fi
 
 # Check if the number is even or odd
+# example: 7 % 2 = 1 => input number is odd 
 if (( num % 2 == 0 )); then
     echo "$num is even."
 else
