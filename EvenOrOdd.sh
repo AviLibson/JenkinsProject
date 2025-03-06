@@ -1,11 +1,13 @@
+#!/bin/bash
+
 // a prompt that asks the user to input a number
-println "Please enter a number:"
+echo "Please enter a number:"
 
 // Reading user input
 def userInput = System.console().readLine()
 
 // Display the entered number
-println "You entered: $userInput"
+echo "You entered: $userInput"
 
 // Example of checking if the number is even or odd
 try {
@@ -13,10 +15,10 @@ try {
 
     // Check if the number is even or odd
     if (number % 2 == 0) {
-        println "$number is even."
+        echo "$number is even."
     } else {
-        println "$number is odd."
+        echo "$number is odd."
     }
 } catch (NumberFormatException e) {
-    println "Invalid input. Please enter a valid integer."
+    echo "Invalid input. Please enter a valid integer."
 }
