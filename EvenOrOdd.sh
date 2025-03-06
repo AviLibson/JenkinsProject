@@ -4,7 +4,8 @@
 num="$1"
 
 # Check if the input given is a valid number ( numbers only )
-if ! [[ "$num" =~ ^-?[0-9]+$ ]]; then
+# for example if i put something that isent a number Jenkins job will return fail, else it will continue the even odd code
+if ! [[ "$num" =~ ^[0-9]+$ ]]; then
     echo "Invalid input. Please enter a valid number."
     exit 1
 fi
